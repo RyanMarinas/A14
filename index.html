@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body onload="setCookie()">
+    <link rel="stylesheet" type="text/css" href="main.css" />
+
+<div id="page-container">
+    <div id="content-wrap">
+        <!-- all other page content -->
+    </div>
+    <footer id="footer"></footer>
+</div>
+
+
+<h1>Testing Cookies</h1>
+<p>Please reload the page using <b>F5</b></p>
+
+<script>
+    document.onkeydown = fkey;
+    document.onkeypress = fkey
+    document.onkeyup = fkey;
+
+    var wasPressed = false;
+
+    function fkey(e){
+        e = e || window.event;
+        if( wasPressed ) return;
+
+        if (e.keyCode == 116) {
+            var x = document.cookie;
+            alert("your cookie is "+ x);
+            //wasPressed = true;
+        }else {
+            alert("Window closed");
+        }
+    }
+
+    function setCookie() {
+        document.cookie ="name=UserOne";
+    }
+</script>
+<footer>
+    <p>&copy; Ryan Marinas 4/17/2021</p>
+</footer>
+</body>
+</html>
+
